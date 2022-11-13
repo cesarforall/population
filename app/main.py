@@ -32,6 +32,15 @@ def run():
     else:
         print(f"{type_chart} no está en las opciones")
 
+    wpp = {}
+
+    for country in countries:
+        wpp[country['Country/Territory']] = country['World Population Percentage']
+
+    #print(wpp)
+
+    my_tools.charts.print_pie_chart(wpp.values(), wpp.keys())
+
 
 if __name__ == '__main__':
     run()
